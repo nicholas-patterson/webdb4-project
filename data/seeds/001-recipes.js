@@ -19,7 +19,12 @@ exports.seed = function(knex) {
           name: "Salmon",
           cook_time: "45:00",
           instructions: "I like lemon juice on it"
-        } // 3
+        }, // 3
+        {
+          name: "Chicken Paramsean",
+          cook_time: "20:00",
+          instructions: "I like it doused in sauce"
+        }
       ]);
     });
 };

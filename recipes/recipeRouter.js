@@ -56,4 +56,17 @@ router.get("/:id/instructions", (req, res) => {
     });
 });
 
+router.get("/ingredients/:id/recipes", (req, res) => {
+  const id = req.params.id;
+  Recipe.getRecipesByIngredient(id)
+    .then(recipes => {
+      res.status(200).json(recipes);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: "Server could not get recipes by that ingredient" });
+    });
+});
+
 module.exports = router;
